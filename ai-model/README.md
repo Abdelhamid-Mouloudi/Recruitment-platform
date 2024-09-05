@@ -12,15 +12,14 @@ This directory contains a machine learning model for matching resumes to job des
 
 ## Directory Structure
 
-ai-model/ 
-├── data/
- │ ├── resumes/ # Directory to store resume PDFs
-  │ └── ranked_resumes.csv # Output CSV file for ranked resumes
+ai-model/  
+├── data/  
+│   ├── resumes/             # Directory to store resume PDFs  
+│   └── ranked_resumes.csv   # Output CSV file for ranked resumes  
+├── src/  
+│   └── resume_ranker.py     # Python script for resume ranking  
+└── requirements.txt         # Dependencies for the project
 
-├── src/
- │ └── resume_ranker.py # Python script for resume ranking
- 
-└── requirements.txt # Dependencies for the project
 
 
 
