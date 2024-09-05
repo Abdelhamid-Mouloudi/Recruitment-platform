@@ -23,42 +23,54 @@ ai-model/
 └── requirements.txt # Dependencies for the project
 
 
+
 ## Installation
 
 1. Clone the repository:
 
-   git clone https://github.com/Abdelhamid-Mouloudi/Recruitment-platform.git
-Navigate to the ai-model directory:
+    ```bash
+    git clone https://github.com/Abdelhamid-Mouloudi/Recruitment-platform.git
+    ```
 
+2. Navigate to the `ai-model` directory:
 
-cd Recruitment-platform/ai-model
-2. Install the required Python packages:
+    ```bash
+    cd Recruitment-platform/ai-model
+    ```
 
-pip install -r requirements.txt
-Usage
-Place your resume PDFs in the data/resumes/ directory.
+3. Install the required Python packages:
 
-Update the job_description variable in src/resume_ranker.py with the job description you want to match.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Run the script:
+## Usage
 
+1. Place your resume PDFs in the `data/resumes/` directory.
 
-python src/resume_ranker.py
-Check the data/ranked_resumes.csv file for the ranked results.
+2. Update the `job_description` variable in `src/resume_ranker.py` with the job description you want to match.
+
+3. Run the script:
+
+    ```bash
+    python src/resume_ranker.py
+    ```
+
+4. Check the `data/ranked_resumes.csv` file for the ranked results.
 
 ## Dependencies
+
 The project requires the following Python packages:
 
-spacy
-PyPDF2
-sentence-transformers
-re
-csv
-os
-You can install these dependencies using:
+- `spacy`  
+- `PyPDF2`  
+- `sentence-transformers`  
 
+To install these dependencies, run:
 
+```bash
 pip install spacy PyPDF2 sentence-transformers
+
 python -m spacy download en_core_web_sm
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
