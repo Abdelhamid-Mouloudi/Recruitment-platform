@@ -12,7 +12,15 @@ This directory contains a machine learning model for matching resumes to job des
 
 ## Directory Structure
 
-ai-model/ ├── data/ │ ├── resumes/ # Directory to store resume PDFs │ └── ranked_resumes.csv # Output CSV file for ranked resumes ├── src/ │ └── resume_ranker.py # Python script for resume ranking └── requirements.txt # Dependencies for the project
+ai-model/ 
+├── data/
+ │ ├── resumes/ # Directory to store resume PDFs
+  │ └── ranked_resumes.csv # Output CSV file for ranked resumes
+
+├── src/
+ │ └── resume_ranker.py # Python script for resume ranking
+ 
+└── requirements.txt # Dependencies for the project
 
 
 ## Installation
@@ -24,7 +32,7 @@ Navigate to the ai-model directory:
 
 
 cd Recruitment-platform/ai-model
-Install the required Python packages:
+2. Install the required Python packages:
 
 pip install -r requirements.txt
 Usage
@@ -38,7 +46,7 @@ Run the script:
 python src/resume_ranker.py
 Check the data/ranked_resumes.csv file for the ranked results.
 
-Dependencies
+## Dependencies
 The project requires the following Python packages:
 
 spacy
