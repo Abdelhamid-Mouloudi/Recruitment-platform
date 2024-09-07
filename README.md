@@ -1,57 +1,41 @@
 # Recruitment Platform with AI Resume Ranker
 
-This project is a recruitment platform that uses an AI-based resume ranker to evaluate and score candidate resumes based on job descriptions. The platform employs modern technologies, including Spring Boot, React.js, PostgreSQL, and AI models to streamline the recruitment process.
+This project is a recruitment platform that uses an AI-based resume ranker to evaluate and score candidate resumes based on job descriptions. The platform is built with Spring Boot, React.js, PostgreSQL, and an AI model for resume ranking.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Technologies](#technologies)
+- [Backend](backend/README.md)
+- [Frontend](frontend/README.md)
+- [AI Model](ai-model/README.md)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
-
-- **AI-Powered Resume Ranking**: Uses NLP to evaluate and match resumes with job descriptions.
-- **Job Postings**: Recruiters can create job postings with specific requirements.
-- **Resume Parsing**: Automatically extracts key information from resumes.
-- **User Authentication**: Secure login for recruiters and candidates.
-- **RESTful APIs**: Facilitates integration with other systems for job posting and resume uploading.
-
-## Technologies
-
-- **Backend**: 
-  - Spring Boot (Java)
-  - AI integration via external APIs (e.g., Python-based AI services)
-  
-- **Frontend**:
-  - React.js
-  - Tailwind CSS
-
-- **Database**:
-  - PostgreSQL
-
-- **Other**:
-  - Node.js (for frontend build and development tools)
-  - REST APIs
-
 ## Installation
 
-### Prerequisites
+To set up the project, follow the installation steps in each section's README:
 
-Ensure the following are installed on your machine:
+- [Backend Installation](backend/README.md)
+- [Frontend Installation](frontend/README.md)
+- [AI Model Setup](ai-model/README.md)
 
-- Java 11+ (for Spring Boot)
-- Node.js (for React.js frontend)
-- PostgreSQL (for the database)
+## Usage
 
-### Backend Setup (Spring Boot)
+Start each service as outlined in the respective README files:
 
-1. Clone the repository:
+- [Backend Usage](backend/README.md)
+- [Frontend Usage](frontend/README.md)
+- [AI Model Usage](ai-model/README.md)
 
-   ```bash
-   git clone https://github.com/yourusername/recruitment-platform.git
-   cd recruitment-platform/backend
- 
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
