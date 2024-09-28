@@ -1,5 +1,11 @@
-<form [formGroup]="loginForm">
-    <input type="email" name="email" id="email" placeholder="Enter a Email" formControlName="email" />
-    <input type="password" name="password" id="password" placeholder="Enter a password" formControlName="password" />
+<!-- Conteneur pour afficher le logo -->
+<div class="logo-container">
+    <img src="assets/logosbg.png" alt="Logo Talent Aligner" />
+  </div>
+  
+  <form [formGroup]="loginForm">
+    <input type="email" name="email" id="email" placeholder="Enter your email" formControlName="email" />
+    <input type="password" name="password" id="password" placeholder="Enter your password" formControlName="password" />
     <button type="button" (click)="login()" [disabled]="loginForm.invalid">Login</button>
-</form>
+  </form>
+  
