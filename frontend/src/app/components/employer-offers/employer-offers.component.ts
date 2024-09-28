@@ -20,21 +20,20 @@ export class EmployerOffersComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadEmployerOffers();
-     this.loadEmployerApplications();
+    this.loadEmployerApplications();
   }
 
- loadEmployerOffers() {
-   this.authService.getEmployerJobOffers().subscribe((data: any[]) => {
-     this.jobOffers = data;
-     console.log("Offres d'emploi : ", this.jobOffers); // Vérification des données
-   });
+  loadEmployerOffers() {
+    this.authService.getEmployerJobOffers().subscribe((data: any[]) => {
+      this.jobOffers = data;
+      console.log("Offres d'emploi : ", this.jobOffers); // Vérification des données
+    });
 
-   this.authService.getEmployerInternshipOffers().subscribe((data: any[]) => {
-     this.internshipOffers = data;
-     console.log("Offres de stage : ", this.internshipOffers); // Vérification des données
-   });
- }
-
+    this.authService.getEmployerInternshipOffers().subscribe((data: any[]) => {
+      this.internshipOffers = data;
+      console.log("Offres de stage : ", this.internshipOffers); // Vérification des données
+    });
+  }
 
   // Redirection pour ajouter une nouvelle offre
   addJobOffer() {
@@ -44,6 +43,7 @@ export class EmployerOffersComponent implements OnInit {
   addInternshipOffer() {
     this.router.navigate(['/add-internship-offer']);
   }
+
   editJobOffer(offerId: number) {
     this.router.navigate([`/edit-job-offer/${offerId}`]);
   }
@@ -51,16 +51,21 @@ export class EmployerOffersComponent implements OnInit {
   editInternshipOffer(offerId: number) {
     this.router.navigate([`/edit-internship-offer/${offerId}`]);
   }
+
   loadEmployerApplications() {
     this.authService.getEmployerApplications().subscribe((data: any[]) => {
       this.applications = data;
       console.log("Candidatures reçues : ", this.applications);
     });
-
   }
-viewApplications() {
-      this.router.navigate(['/employer-applications']);  // Redirection vers la liste des candidatures
-    }
+
+  viewApplications() {
+    this.router.navigate(['/employer-applications']);  // Redirection vers la liste des candidatures
+  }
+
+  // Ajouter la fonction logout
+  logout() {
+    this.authService.logout(); // Cela dépend de la méthode dans votre service AuthService
+    this.router.navigate(['/login']);  // Redirige vers la page de connexion après déconnexion
+  }
 }
-
-
