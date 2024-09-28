@@ -1,0 +1,17 @@
+<h1>Offres d'emploi et de stage</h1>
+
+<!-- Section des offres d'emploi -->
+<h2>Offres d'emploi</h2>
+<div *ngFor="let offer of jobOffers" class="offer">
+  <h3>{{ offer.title }}</h3>
+  <p>{{ offer.description }}</p>
+  <button (click)="applyForJobOffer(offer.id)">Postuler à cette offre</button>
+</div>
+
+<!-- Section des offres de stage -->
+<h2>Offres de stage</h2>
+<div *ngFor="let offer of internshipOffers" class="offer">
+  <h3>{{ offer.title }}</h3>
+  <p>{{ offer.description }}</p>
+  <button (click)="applyForInternshipOffer(offer.id)">Postuler à ce stage</button>
+</div>

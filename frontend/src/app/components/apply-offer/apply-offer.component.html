@@ -1,0 +1,32 @@
+<h1>Postuler à une offre</h1>
+
+<form [formGroup]="applyForm" (ngSubmit)="apply()">
+  <div>
+    <label for="firstName">Prénom</label>
+    <input id="firstName" formControlName="firstName" type="text" />
+  </div>
+
+  <div>
+    <label for="lastName">Nom</label>
+    <input id="lastName" formControlName="lastName" type="text" />
+  </div>
+
+  <div>
+    <label for="age">Âge</label>
+    <input id="age" formControlName="age" type="number" />
+  </div>
+
+  <div>
+    <label for="motivationLetter">Lettre de motivation</label>
+    <textarea id="motivationLetter" formControlName="motivationLetter"></textarea>
+  </div>
+
+  <!-- Gestion du fichier PDF -->
+  <div>
+    <label for="cv">CV (Fichier PDF)</label>
+    <input type="file" id="cv" (change)="onFileSelected($event)" accept="application/pdf" />
+    <input type="text" [value]="applyForm.get('fileName')?.value" readonly>
+  </div>
+
+  <button type="submit">Envoyer la candidature</button>
+</form>

@@ -1,0 +1,14 @@
+<h1>Liste des candidatures reçues</h1>
+
+<div *ngFor="let application of applications" class="application">
+  <h3>{{ application.firstName }} {{ application.lastName }}</h3>
+  <p>Âge : {{ application.age }}</p>
+  <p>Lettre de motivation : {{ application.motivationLetter }}</p>
+  <p>Chemin du CV : <a [href]="application.cvPath" target="_blank">Voir le CV</a></p>
+  <p>Offre liée : {{ application.offer.title }}</p>
+  <p>Rank AI : {{ getAIRankForApplication(application) }}</p>  <!-- Affichage du score AI -->
+</div>
+
+<div *ngIf="applications.length === 0">
+  <p>Aucune candidature reçue pour le moment.</p>
+</div>

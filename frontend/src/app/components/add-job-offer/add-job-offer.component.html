@@ -1,0 +1,13 @@
+<h2>Ajouter une nouvelle offre d'emploi</h2>
+<form [formGroup]="addJobOfferForm" (ngSubmit)="addJobOffer()">
+  <label>Titre</label>
+  <input formControlName="title" type="text" required />
+
+  <label>Description</label>
+  <textarea formControlName="description" required></textarea>
+
+  <label>Type de contrat</label>
+  <input formControlName="contractType" type="text" required />
+
+  <button type="submit">Ajouter l'offre d'emploi</button>
+</form>

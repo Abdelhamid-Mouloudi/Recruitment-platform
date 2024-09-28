@@ -1,0 +1,20 @@
+<h1>Offres de l'employeur</h1>
+
+<!-- Section des offres d'emploi gérées par l'employeur -->
+<h2>Mes offres d'emploi</h2>
+<div *ngFor="let offer of jobOffers" class="offer">
+  <h3>{{ offer.title }}</h3>
+  <p>{{ offer.description }}</p>
+  <button (click)="editJobOffer(offer.id)">Modifier cette offre</button>
+</div>
+<button (click)="addJobOffer()">Ajouter une nouvelle offre d'emploi</button>
+<!-- Ajouter ce bouton pour afficher les candidatures -->
+<button (click)="viewApplications()">Voir les candidatures reçues</button>
+<!-- Section des offres de stage gérées par l'employeur -->
+<h2>Mes offres de stage</h2>
+<div *ngFor="let offer of internshipOffers" class="offer">
+  <h3>{{ offer.title }}</h3>
+  <p>{{ offer.description }}</p>
+  <button (click)="editInternshipOffer(offer.id)">Modifier cette offre</button>
+</div>
+<button (click)="addInternshipOffer()">Ajouter une nouvelle offre de stage</button>

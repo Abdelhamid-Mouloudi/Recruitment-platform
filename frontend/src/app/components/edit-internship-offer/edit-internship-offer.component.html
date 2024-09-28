@@ -1,0 +1,13 @@
+<h2>Modifier l'offre de stage</h2>
+<form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+  <label>Titre</label>
+  <input formControlName="title" type="text" />
+
+  <label>Description</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Durée en mois</label>
+  <input formControlName="durationInMonths" type="number" />
+
+  <button type="submit">Enregistrer les modifications</button>
+</form>

@@ -1,0 +1,13 @@
+<h2>Ajouter une nouvelle offre de stage</h2>
+<form [formGroup]="addInternshipOfferForm" (ngSubmit)="addInternshipOffer()">
+  <label>Titre</label>
+  <input formControlName="title" type="text" required />
+
+  <label>Description</label>
+  <textarea formControlName="description" required></textarea>
+
+  <label>Durée (en mois)</label>
+  <input formControlName="durationInMonths" type="number" required />
+
+  <button type="submit">Ajouter l'offre de stage</button>
+</form>
