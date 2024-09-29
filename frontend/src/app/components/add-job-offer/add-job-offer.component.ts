@@ -33,4 +33,8 @@ export class AddJobOfferComponent implements OnInit {
       });
     }
   }
+  logout() {
+    this.authService.logout(); // Cela dépend de la méthode dans votre service AuthService
+    this.router.navigate(['/login']);  // Redirige vers la page de connexion après déconnexion
+  }
 }
