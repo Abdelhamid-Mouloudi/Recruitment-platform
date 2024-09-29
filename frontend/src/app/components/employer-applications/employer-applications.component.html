@@ -1,14 +1,28 @@
-<h1>Liste des candidatures reçues</h1>
+<!-- Navbar avec logo et bouton de déconnexion -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="assets/logosbg.png" alt="Logo Talent Aligner" />
+  </div>
+  <button class="logout-btn" (click)="logout()">Déconnexion</button>
+</nav>
 
+<!-- Phrase d'accroche pour la plateforme -->
+<section class="intro">
+  <h1>Liste des candidatures reçues</h1>
+  <p>Examinez les candidatures reçues et évaluez les talents en fonction des critères AI et de votre expertise.</p>
+</section>
+
+<!-- Liste des candidatures -->
 <div *ngFor="let application of applications" class="application">
   <h3>{{ application.firstName }} {{ application.lastName }}</h3>
   <p>Âge : {{ application.age }}</p>
   <p>Lettre de motivation : {{ application.motivationLetter }}</p>
   <p>Chemin du CV : <a [href]="application.cvPath" target="_blank">Voir le CV</a></p>
   <p>Offre liée : {{ application.offer.title }}</p>
-  <p>Rank AI : {{ getAIRankForApplication(application) }}</p>  <!-- Affichage du score AI -->
+  <p>Rank AI : {{ getAIRankForApplication(application) }}</p> <!-- Affichage du score AI -->
 </div>
 
+<!-- Message en cas d'absence de candidatures -->
 <div *ngIf="applications.length === 0">
   <p>Aucune candidature reçue pour le moment.</p>
 </div>

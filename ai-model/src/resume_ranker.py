@@ -1,28 +1,21 @@
-# src/resume_ranker.py
-
+import sys
 import spacy
 import PyPDF2
 from sentence_transformers import SentenceTransformer, util
 import re
-import csv
-import os
+import warnings
 
-# Loading the SentenceTransformer model
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+# Charger le modèle SentenceTransformer et spaCy
 model = SentenceTransformer('all-MiniLM-L6-v2')
-
-# Loading the spaCy model for NER
 nlp = spacy.load("en_core_web_sm")
 
-# Job description
-job_description = "NLP Specialist: Develop and implement NLP algorithms. Proficiency in Python, NLP libraries, and ML frameworks required."
+# Récupérer les arguments (chemin du CV et description de l'offre)
+cv_path = sys.argv[1]
+job_description = sys.argv[2]
 
-# Directory containing resumes
-resume_dir = "data/resumes/"
-
-# Output CSV file
-csv_filename = "data/ranked_resumes.csv"
-
-# Function to extract text from a PDF file
+# Fonction pour extraire le texte d'un fichier PDF
 def extract_text_from_pdf(pdf_path):
     with open(pdf_path, "rb") as pdf_file:
         pdf_reader = PyPDF2.PdfReader(pdf_file)
@@ -31,39 +24,30 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text()
         return text
 
-# Function to extract emails and names using spaCy NER
+# Fonction pour extraire les entités nommées (noms, emails) à l'aide de spaCy
 def extract_entities(text):
     emails = re.findall(r'\S+@\S+', text)
     doc = nlp(text)
     names = [ent.text for ent in doc.ents if ent.label_ == "PERSON"]
     return emails, names
 
-# Embed the job description
+# Extraire le texte du CV
+resume_text = extract_text_from_pdf(cv_path)
+
+# Embedding du CV et de la description du job
 job_desc_embedding = model.encode(job_description, convert_to_tensor=True)
+resume_embedding = model.encode(resume_text, convert_to_tensor=True)
 
-# Process each resume
-ranked_resumes = []
-for filename in os.listdir(resume_dir):
-    if filename.endswith(".pdf"):
-        resume_path = os.path.join(resume_dir, filename)
-        resume_text = extract_text_from_pdf(resume_path)
-        emails, names = extract_entities(resume_text)
-        resume_embedding = model.encode(resume_text, convert_to_tensor=True)
-        similarity = util.pytorch_cos_sim(job_desc_embedding, resume_embedding).item()
-        ranked_resumes.append((names, emails, similarity))
+# Calculer la similarité entre la description de l'offre et le CV
+similarity = util.pytorch_cos_sim(job_desc_embedding, resume_embedding).item()
 
-# Sorting resumes by similarity score
-ranked_resumes.sort(key=lambda x: x[2], reverse=True)
+# Extraire les noms et emails du texte du CV
+emails, names = extract_entities(resume_text)
 
-# Saving results to CSV
-with open(csv_filename, "w", newline="") as csvfile:
-    csv_writer = csv.writer(csvfile)
-    csv_writer.writerow(["Rank", "Name", "Email", "Similarity"])
-    for rank, (names, emails, similarity) in enumerate(ranked_resumes, start=1):
-        name = names[0] if names else "N/A"
-        email = emails[0] if emails else "N/A"
-        csv_writer.writerow([rank, name, email, similarity])
+# Forcer l'encodage de sortie en UTF-8
+sys.stdout.reconfigure(encoding='utf-8')
 
-# Printing ranked resumes
-for rank, (names, emails, similarity) in enumerate(ranked_resumes, start=1):
-    print(f"Rank {rank}: Names: {names}, Emails: {emails}, Similarity: {similarity:.2f}")
+# Afficher les résultats
+name = names[0] if names else "N/A"
+email = emails[0] if emails else "N/A"
+print(f"Similarité : {similarity:.2f}")
