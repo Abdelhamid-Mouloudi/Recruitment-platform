@@ -68,4 +68,8 @@ export class ApplyOfferComponent implements OnInit {
         alert('Veuillez remplir tous les champs et ajouter un fichier CV.');
       }
     }
+    logout() {
+      this.authService.logout(); // Cela dépend de la méthode dans votre service AuthService
+      this.router.navigate(['/login']);  // Redirige vers la page de connexion après déconnexion
+    }
 }

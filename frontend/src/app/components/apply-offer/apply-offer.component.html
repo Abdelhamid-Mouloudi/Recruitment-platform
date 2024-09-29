@@ -1,32 +1,41 @@
-<h1>Postuler à une offre</h1>
-
-<form [formGroup]="applyForm" (ngSubmit)="apply()">
-  <div>
-    <label for="firstName">Prénom</label>
-    <input id="firstName" formControlName="firstName" type="text" />
+<div class="navbar">
+  <div class="logo-container">
+    <img src="assets/logosbg.png" alt="Company Logo" />
   </div>
+  <button class="logout-btn" (click)="logout()">Déconnexion</button>
+</div>
 
-  <div>
-    <label for="lastName">Nom</label>
-    <input id="lastName" formControlName="lastName" type="text" />
-  </div>
+<div class="container">
+  <h1>Postuler à cette offre</h1>
 
-  <div>
-    <label for="age">Âge</label>
-    <input id="age" formControlName="age" type="number" />
-  </div>
+  <form [formGroup]="applyForm" (ngSubmit)="apply()">
+    <div>
+      <label for="firstName">Prénom</label>
+      <input id="firstName" formControlName="firstName" type="text" placeholder="Votre prénom" required />
+    </div>
 
-  <div>
-    <label for="motivationLetter">Lettre de motivation</label>
-    <textarea id="motivationLetter" formControlName="motivationLetter"></textarea>
-  </div>
+    <div>
+      <label for="lastName">Nom</label>
+      <input id="lastName" formControlName="lastName" type="text" placeholder="Votre nom" required />
+    </div>
 
-  <!-- Gestion du fichier PDF -->
-  <div>
-    <label for="cv">CV (Fichier PDF)</label>
-    <input type="file" id="cv" (change)="onFileSelected($event)" accept="application/pdf" />
-    <input type="text" [value]="applyForm.get('fileName')?.value" readonly>
-  </div>
+    <div>
+      <label for="age">Âge</label>
+      <input id="age" formControlName="age" type="number" placeholder="Votre âge" required />
+    </div>
 
-  <button type="submit">Envoyer la candidature</button>
-</form>
+    <div>
+      <label for="motivationLetter">Lettre de motivation</label>
+      <textarea id="motivationLetter" formControlName="motivationLetter" placeholder="Votre lettre de motivation" required></textarea>
+    </div>
+
+    <!-- Gestion du fichier PDF -->
+    <div>
+      <label for="cv">CV (Fichier PDF)</label>
+      <input type="file" id="cv" (change)="onFileSelected($event)" accept="application/pdf" required />
+      <input type="text" [value]="applyForm.get('fileName')?.value" readonly placeholder="Nom du fichier" />
+    </div>
+
+    <button type="submit" [disabled]="!applyForm.valid">Envoyer la candidature</button>
+  </form>
+</div>
