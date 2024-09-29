@@ -1,17 +1,33 @@
-<h1>Offres d'emploi et de stage</h1>
+<!-- Navbar avec logo et bouton de déconnexion -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="assets/logosbg.png" alt="Logo Talent Aligner" />
+  </div>
+  <button class="logout-btn" (click)="logout()">Déconnexion</button>
+</nav>
+
+<!-- Phrase d'accroche pour la valeur de la plateforme -->
+<section class="intro">
+  <h1>Talent Aligner</h1>
+  <p>Découvrez des opportunités de carrière passionnantes et trouvez l'emploi ou le stage qui vous correspond le mieux. Rejoignez notre plateforme pour postuler facilement aux offres qui vous intéressent.</p>
+</section>
 
 <!-- Section des offres d'emploi -->
-<h2>Offres d'emploi</h2>
-<div *ngFor="let offer of jobOffers" class="offer">
-  <h3>{{ offer.title }}</h3>
-  <p>{{ offer.description }}</p>
-  <button (click)="applyForJobOffer(offer.id)">Postuler à cette offre</button>
-</div>
+<section class="offers-section">
+  <h2>Offres d'emploi</h2>
+  <div *ngFor="let offer of jobOffers" class="offer">
+    <h3>{{ offer.title }}</h3>
+    <p>{{ offer.description }}</p>
+    <button (click)="applyForJobOffer(offer.id)">Postuler à cette offre</button>
+  </div>
+</section>
 
 <!-- Section des offres de stage -->
-<h2>Offres de stage</h2>
-<div *ngFor="let offer of internshipOffers" class="offer">
-  <h3>{{ offer.title }}</h3>
-  <p>{{ offer.description }}</p>
-  <button (click)="applyForInternshipOffer(offer.id)">Postuler à ce stage</button>
-</div>
+<section class="offers-section">
+  <h2>Offres de stage</h2>
+  <div *ngFor="let offer of internshipOffers" class="offer">
+    <h3>{{ offer.title }}</h3>
+    <p>{{ offer.description }}</p>
+    <button (click)="applyForInternshipOffer(offer.id)">Postuler à ce stage</button>
+  </div>
+</section>

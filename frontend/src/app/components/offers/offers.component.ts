@@ -38,4 +38,8 @@ export class OffersComponent implements OnInit {
   applyForInternshipOffer(offerId: number) {
     this.router.navigate([`/apply-internship-offer/${offerId}`]);
   }
+  logout() {
+    this.authService.logout(); // Cela dépend de la méthode dans votre service AuthService
+    this.router.navigate(['/login']);  // Redirige vers la page de connexion après déconnexion
+  }
 }
