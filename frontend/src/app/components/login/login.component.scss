@@ -1,46 +1,85 @@
-/* Centrer le formulaire */
-.d-flex {
-  height: 100vh;
-  //background-image: url('/assets/images/postuler.jpg');
+// Main container with flex to center the login form
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a; // Dark background
+  color: #fff;
 }
 
+// Logo styling
+.logo {
+  margin-bottom: 20px;
+  text-align: center;
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+// Card styling for form container
 .card {
-  border-radius: 8px;
-  background-color: #fff6e7;
-  border: 1px solid #ddd;
-
-
-
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }
 
-/* Style pour les champs de formulaire */
-input {
-  background-color: #e9f2ff;
-  border: 1px solid #007bff;
+// Input fields styling
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #d4af37; // Gold focus border
+    }
+   
+  }
+
+  .text-danger {
+    font-size: 14px;
+    color: #f8d7da;
+  }
 }
 
-input:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+// Login button styling
+.btn-login {
+  background-color: #d4af37;
+  color: #000;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
 
-.text-danger {
-  font-size: 0.875rem;
-}
+  &:hover {
+    background-color: #b38f2f;
+  }
 
-/* Style pour le bouton */
-button {
-  background-color: #007bff;
-  border-color: #007bff;
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-button:disabled {
-  background-color: #b0d4ff;
-  cursor: not-allowed;
-}
-
-button:hover:enabled {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  &:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
 }
