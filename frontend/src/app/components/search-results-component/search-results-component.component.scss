@@ -1,62 +1,59 @@
-/* Styles généraux */
 .search-results-container {
-    padding: 2rem;
-    background-color: #f4f6f9; /* Couleur de fond légère */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    margin: 2rem 0; /* Marges autour du conteneur */
-}
-
-/* Titre des résultats de recherche */
-.search-results-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #007bff; /* Couleur bleue */
-    margin-bottom: 1.5rem; /* Espacement sous le titre */
-    text-align: center;
-}
-
-/* Liste des offres */
-.offers-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grille adaptable */
-    gap: 1.5rem; /* Espacement entre les cartes */
-}
-
-/* Carte d'offre */
-.offer-card {
-    background-color: #ffffff; /* Fond blanc */
-    padding: 1.5rem;
-    border-radius: 8px; /* Coins arrondis */
-    border: 1px solid #ddd; /* Bordure légère */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    transition: transform 0.2s, box-shadow 0.2s; /* Effet de transition */
-}
-
-.offer-card:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
-}
-
-/* Titre de l'offre */
-.offer-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333; /* Couleur du texte */
-    margin-bottom: 0.75rem; /* Espacement sous le titre */
-}
-
-/* Description de l'offre */
-.offer-description {
-    font-size: 1rem;
-    color: #666; /* Couleur de texte gris */
-    line-height: 1.5; /* Hauteur de ligne */
-}
-
-/* Aucune offre trouvée */
-.no-results p {
-    font-size: 1.2rem;
-    color: #999; /* Texte grisé */
-    text-align: center;
-    margin-top: 2rem; /* Espacement en haut */
-}
+    padding: 30px 15px;
+    background-color: #111;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+    .search-results-title {
+      color: #d4af37;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  
+    .offers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .offer-card {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+      }
+  
+      .offer-title {
+        font-size: 1.4rem;
+        color: #d4af37;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+  
+      .offer-description {
+        font-size: 1rem;
+        color: #ccc;
+        line-height: 1.5;
+      }
+    }
+  
+    .no-results {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #bbb;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  }
+  
