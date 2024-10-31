@@ -1,9 +1,5 @@
 package com.recruitmentapp.services.auth;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
-
 import com.recruitmentapp.dto.EmployerDTO;
 import com.recruitmentapp.dto.SignupDTO;
 import com.recruitmentapp.dto.UserDTO;
@@ -11,6 +7,9 @@ import com.recruitmentapp.entities.Employer;
 import com.recruitmentapp.entities.User;
 import com.recruitmentapp.repositories.EmployerRepository;
 import com.recruitmentapp.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 @Service
 public class AuthServiceImpl implements AuthService {

@@ -1,9 +1,7 @@
 package com.recruitmentapp.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.recruitmentapp.entities.Employer;
-import com.recruitmentapp.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployerRepository extends JpaRepository<Employer,Long> {
     //Employer findFirstByEmail(String email);

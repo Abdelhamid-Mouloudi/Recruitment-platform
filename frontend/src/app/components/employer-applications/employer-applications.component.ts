@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employer-applications',
@@ -10,7 +9,6 @@ import { Router } from '@angular/router';
 export class EmployerApplicationsComponent implements OnInit {
 
   applications: any[] = [];
-  router: any;
 
   constructor(private authService: AuthService) { }
 
@@ -32,9 +30,10 @@ export class EmployerApplicationsComponent implements OnInit {
  getAIRankForApplication(application: any): string {
    return application.aiRank ? application.aiRank : 'En attente de traitement AI';
  }
- logout() {
-  this.authService.logout(); // Cela dépend de la méthode dans votre service AuthService
-  this.router.navigate(['/login']);  // Redirige vers la page de connexion après déconnexion
-}
+
+ viewCV(fileName: string) {
+     const url = `http://localhost:8080/api/files/download/${fileName}`;
+     window.open(url, '_blank');  // Ouvre le fichier PDF dans un nouvel onglet
+   }
 
 }

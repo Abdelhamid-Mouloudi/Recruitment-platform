@@ -1,5 +1,9 @@
 package com.recruitmentapp.services.jwt;
 
+import com.recruitmentapp.entities.Employer;
+import com.recruitmentapp.entities.User;
+import com.recruitmentapp.repositories.EmployerRepository;
+import com.recruitmentapp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,12 +12,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.recruitmentapp.entities.Employer;
-import com.recruitmentapp.entities.User;
-import com.recruitmentapp.repositories.EmployerRepository;
-import com.recruitmentapp.repositories.UserRepository;
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 

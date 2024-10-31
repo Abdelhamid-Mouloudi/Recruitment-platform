@@ -1,23 +1,20 @@
-<div class="navbar">
-  <div class="logo-container">
-    <img src="assets/logosbg.png" alt="Company Logo" />
+<h2 class="mb-4">Ajouter une nouvelle offre d'emploi</h2>
+<form [formGroup]="addJobOfferForm" (ngSubmit)="addJobOffer()" class="offer-form">
+  <div class="form-group">
+    <label>Titre</label>
+    <input formControlName="title" type="text" class="form-control" required />
   </div>
-  <button class="logout-btn" (click)="logout()">Déconnexion</button>
-</div>
 
-<div class="container">
-  <h2>Ajouter une nouvelle offre d'emploi</h2>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea formControlName="description" class="form-control" required></textarea>
+  </div>
 
-  <form [formGroup]="addJobOfferForm" (ngSubmit)="addJobOffer()">
-    <label for="title">Titre</label>
-    <input id="title" formControlName="title" type="text" placeholder="Titre de l'offre" required />
+  <div class="form-group">
+    <label>Type de contrat</label>
+    <input formControlName="contractType" type="text" class="form-control" required />
+  </div>
 
-    <label for="description">Description</label>
-    <textarea id="description" formControlName="description" placeholder="Description de l'offre" required></textarea>
-
-    <label for="contractType">Type de contrat</label>
-    <input id="contractType" formControlName="contractType" type="text" placeholder="Type de contrat" required />
-
-    <button type="submit" [disabled]="!addJobOfferForm.valid">Ajouter l'offre d'emploi</button>
-  </form>
-</div>
+  <button type="submit" class="btn btn-primary">Ajouter l'offre d'emploi</button>
+</form>
+<hr />

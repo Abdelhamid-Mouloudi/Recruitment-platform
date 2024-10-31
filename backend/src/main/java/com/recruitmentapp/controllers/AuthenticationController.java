@@ -1,5 +1,13 @@
 package com.recruitmentapp.controllers;
 
+import com.recruitmentapp.dto.AuthenticationDTO;
+import com.recruitmentapp.dto.AuthenticationResponse;
+import com.recruitmentapp.entities.Employer;
+import com.recruitmentapp.entities.User;
+import com.recruitmentapp.repositories.EmployerRepository;
+import com.recruitmentapp.repositories.UserRepository;
+import com.recruitmentapp.services.jwt.UserDetailsServiceImpl;
+import com.recruitmentapp.util.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,15 +19,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.recruitmentapp.dto.AuthenticationDTO;
-import com.recruitmentapp.dto.AuthenticationResponse;
-import com.recruitmentapp.entities.Employer;
-import com.recruitmentapp.entities.User;
-import com.recruitmentapp.repositories.EmployerRepository;
-import com.recruitmentapp.repositories.UserRepository;
-import com.recruitmentapp.services.jwt.UserDetailsServiceImpl;
-import com.recruitmentapp.util.JwtUtil;
 
 import java.io.IOException;
 

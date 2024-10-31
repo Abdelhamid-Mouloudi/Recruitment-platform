@@ -1,13 +1,6 @@
 package com.recruitmentapp.controllers;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.recruitmentapp.entities.CandidateApplication;
 import com.recruitmentapp.entities.Employer;
 import com.recruitmentapp.entities.Offer;
@@ -17,7 +10,12 @@ import com.recruitmentapp.repositories.EmployerRepository;
 import com.recruitmentapp.repositories.OfferRepository;
 import com.recruitmentapp.repositories.UserRepository;
 import com.recruitmentapp.services.FileStorageService;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 import java.io.BufferedReader;
@@ -96,7 +94,7 @@ public class ApplicationController {
     private String callAIModel(String filePath, String jobDescription) {
         try {
             // Chemin absolu du script Python
-            String scriptPath = "C:/Users/Abdelhamid/Desktop/3D/Recruitment-platform/ai-model/src/resume_ranker.py";
+            String scriptPath = "C:/Users/HP/Downloads/Spring_Secuirty-Angular_Authentication-CodeElevate-main/Spring_Secuirty-Angular_Authentication-CodeElevate-main/ai-model/src/resume_ranker.py";
 
             // Créer le ProcessBuilder pour exécuter le script Python avec le chemin du CV et la description de l'offre
             ProcessBuilder processBuilder = new ProcessBuilder("python", scriptPath, filePath, jobDescription);

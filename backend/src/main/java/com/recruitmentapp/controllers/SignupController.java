@@ -1,16 +1,15 @@
 package com.recruitmentapp.controllers;
 
+import com.recruitmentapp.dto.EmployerDTO;
+import com.recruitmentapp.dto.SignupDTO;
+import com.recruitmentapp.dto.UserDTO;
+import com.recruitmentapp.services.auth.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.recruitmentapp.dto.EmployerDTO;
-import com.recruitmentapp.dto.SignupDTO;
-import com.recruitmentapp.dto.UserDTO;
-import com.recruitmentapp.services.auth.AuthService;
 
 @RestController
 public class SignupController {

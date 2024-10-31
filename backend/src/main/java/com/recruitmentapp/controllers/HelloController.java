@@ -1,10 +1,9 @@
 package com.recruitmentapp.controllers;
 
+import com.recruitmentapp.dto.HelloResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.recruitmentapp.dto.HelloResponse;
 
 @RestController
 @RequestMapping("/api")

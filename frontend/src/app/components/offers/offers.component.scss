@@ -1,112 +1,70 @@
-/* Styling global */
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f4f4f9;
-    padding: 2rem;
-  }
-  
-  /* Style de la navbar */
-  .navbar {
+/* Container pour aligner les colonnes */
+.offers-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: #1f1f1f;
-    padding: 1rem 2rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo-container img {
-    width: 120px;
-  }
-  
-  .logout-btn {
-    background-color: #d4af37;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .logout-btn:hover {
-    background-color: #b38f2f;
-  }
-  
-  /* Style de la section d'introduction */
-  .intro {
-    text-align: center;
-    margin: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* Style général pour chaque colonne */
+.job-offers-column, .internship-offers-column {
+    width: 48%; /* Largeur ajustée pour occuper deux colonnes */
+}
+
+/* Style pour les titres des sections */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
     color: #333;
-  }
-  
-  .intro h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+    border-bottom: 1px solid #ccc; /* Ligne fine sous le titre */
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Style pour les cartes d'offres */
+.offer-card {
+    background-color: #fff6e7; /* Fond beige clair */
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effet au survol pour les offres */
+.offer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre des offres */
+.offer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #444;
     margin-bottom: 1rem;
-    color: #1f1f1f;
-  }
-  
-  .intro p {
-    font-size: 1.25rem;
+}
+
+/* Description des offres */
+.offer-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #666;
-  }
-  
-  /* Style des sections des offres */
-  .offers-section {
-    width: 100%;
-    max-width: 900px;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  .offers-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #1f1f1f;
-  }
-  
-  .offer {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    border-left: 5px solid #d4af37;
-  }
-  
-  .offer h3 {
-    margin: 0;
-    font-size: 1.25rem;
+}
+
+/* Style pour les boutons */
+.btn-success, .btn-info {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
     font-weight: bold;
-    color: #1f1f1f;
-  }
-  
-  .offer p {
-    color: #666;
-  }
-  
-  .offer button {
-    background-color: #1f1f1f;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .offer button:hover {
-    background-color: #333;
-  }
-  
+}
+
+/* Espacement entre les colonnes */
+@media (max-width: 768px) {
+    .job-offers-column, .internship-offers-column {
+        width: 100%;
+        margin-bottom: 2rem; /* Espace entre les sections en vue mobile */
+    }
+}

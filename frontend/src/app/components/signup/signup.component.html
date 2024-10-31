@@ -1,15 +1,22 @@
-<div class="logo">
-  <img src="assets/logosbg.png" alt="Talent Aligner Logo">
-</div>
+<form [formGroup]="signupForm" class="form-container">
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" formControlName="name" />
+  </div>
 
-<form [formGroup]="signupForm">
-  <input type="text" name="name" id="name" placeholder="Enter your name" formControlName="name" />
-  <input type="email" name="email" id="email" placeholder="Enter your email" formControlName="email" />
-  <input type="password" name="password" id="password" placeholder="Enter your password" formControlName="password" />
-  <input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm your password" formControlName="confirmPassword" />
+  <div class="form-group">
+    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" formControlName="email" />
+  </div>
 
-  <!-- Ajout des radios pour le rôle -->
-  <div class="radio-group">
+  <div class="form-group">
+    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" formControlName="password" />
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" formControlName="confirmPassword" />
+  </div>
+
+  <!-- Ajout d'une section pour le choix du rôle -->
+  <div class="form-group role-selection">
     <label>
       <input type="radio" formControlName="role" value="USER" /> Utilisateur
     </label>
@@ -18,5 +25,7 @@
     </label>
   </div>
 
-  <button type="button" [disabled]="signupForm.invalid" (click)="signup()">Signup</button>
+  <div class="form-group">
+    <button type="button" class="btn btn-primary" [disabled]="signupForm.invalid" (click)="signup()">Signup</button>
+  </div>
 </form>

@@ -1,0 +1,7 @@
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    <input type="text" formControlName="searchInput" placeholder="Search offers..." />
+    <button type="submit">Search</button>
+  </form>
+</nav>

@@ -1,93 +1,27 @@
-/* Style global */
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f4f4f9;
-    padding: 2rem;
-  }
-  
-  /* Style de la navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: #1f1f1f;
-    padding: 1rem 2rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo-container img {
-    width: 120px;
-  }
-  
-  .logout-btn {
-    background-color: #d4af37;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .logout-btn:hover {
-    background-color: #b38f2f;
-  }
-  
-  /* Style de la section d'introduction */
-  .intro {
-    text-align: center;
-    margin: 2rem 0;
-    color: #333;
-  }
-  
-  .intro h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #1f1f1f;
-  }
-  
-  .intro p {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #666;
-  }
-  
-  /* Style de la liste des candidatures */
-  .application {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #d4af37;
-  }
-  
-  .application h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .application p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  .application a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .application a:hover {
-    text-decoration: underline;
-  }
-  
+/* Styles pour la barre de navigation */
+.navbar {
+    background-color: #2c3e50; /* Couleur sombre pour le fond */
+    border-bottom: 2px solid #007bff; /* Bordure inférieure colorée */
+}
+
+.navbar .navbar-brand {
+    color: #f39c12; /* Couleur lumineuse pour la marque */
+}
+
+.navbar .nav-link {
+    color: #ecf0f1; /* Couleur claire pour les liens */
+}
+
+.navbar .nav-link:hover {
+    color: #f39c12; /* Couleur lumineuse au survol */
+}
+
+.navbar .btn-outline-danger {
+    color: #e74c3c; /* Couleur lumineuse pour le bouton */
+    border-color: #e74c3c;
+}
+
+.navbar .btn-outline-danger:hover {
+    background-color: #e74c3c; /* Fond rouge au survol */
+    color: white;
+}

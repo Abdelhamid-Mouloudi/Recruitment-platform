@@ -1,0 +1,62 @@
+/* Section des offres */
+.offers-section {
+    margin-top: 2rem;
+}
+
+/* Titre de la section */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Style des cartes d'offres */
+.offer-card {
+    background-color: #fff6e7; /* Fond beige clair */
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effet au survol des cartes */
+.offer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre des offres */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Description des offres */
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Style du bouton Postuler */
+.btn-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+/* Message quand il n'y a pas d'offres */
+.no-offers {
+    font-size: 1rem;
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+}

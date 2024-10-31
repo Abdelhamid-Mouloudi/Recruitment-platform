@@ -1,0 +1,20 @@
+<div class="container offers-section">
+  <!-- Section des offres de stage -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="section-title">Offres de stage</h2>
+      <div *ngIf="internshipOffers.length > 0; else noInternshipOffers">
+        <div class="card offer-card mb-4" *ngFor="let offer of internshipOffers">
+          <div class="card-body">
+            <h5 class="card-title">{{ offer.title }}</h5>
+            <p class="card-text">{{ offer.description }}</p>
+            <button (click)="applyForInternshipOffer(offer.id)" class="btn btn-info">Postuler</button>
+          </div>
+        </div>
+      </div>
+      <ng-template #noInternshipOffers>
+        <p>Aucune offre de stage disponible pour le moment.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
-import { OffersModule } from './components/offers/offers.module';
-import { AddJobOfferModule } from './components/add-job-offer/add-job-offer.module';  // Importer ici
-import { AddInternshipOfferModule } from './components/add-internship-offer/add-internship-offer.module';
+import { OffersComponent } from './components/offers/offers.component';
+import { EmployerOffersComponent } from './components/employer-offers/employer-offers.component';
+import { AddJobOfferComponent } from './components/add-job-offer/add-job-offer.component';  // Importer ici
+import { AddInternshipOfferComponent } from './components/add-internship-offer/add-internship-offer.component';
 import { EmployerApplicationsComponent } from './components/employer-applications/employer-applications.component';  // Importer ici
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,28 +17,42 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { PdfViewerModule } from 'ng2-pdf-viewer'; // Pour gérer les PDF
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { CommonModule } from '@angular/common';
+import { InternshipOfferComponent } from './components/internship-offer/internship-offer.component';
+import { JobOfferComponent } from './components/job-offer/job-offer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchResultsComponent } from './components/search-results-component/search-results-component.component';
+import { RouterModule } from '@angular/router';
+import { MyAppComponent } from './components/my-app/my-app.component';
 @NgModule({
   declarations: [
+    InternshipOfferComponent,
+        JobOfferComponent,
     AppComponent,
     SignupComponent,
     LoginComponent,
-    EmployerApplicationsComponent  // Assurez-vous que ce composant est bien déclaré ici
+    OffersComponent,
+    EmployerOffersComponent,
+    AddJobOfferComponent,
+    AddInternshipOfferComponent, EmployerApplicationsComponent, InternshipOfferComponent, JobOfferComponent,SearchResultsComponent,NavbarComponent, MyAppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    BrowserAnimationsModule, // Nécessaire pour Angular Material
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSelectModule,
-    PdfViewerModule,
+     BrowserAnimationsModule,
+         MatFormFieldModule,
+         MatInputModule,
+         MatIconModule,
+         MatButtonModule,
+         MatSelectModule,
+         PdfViewerModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

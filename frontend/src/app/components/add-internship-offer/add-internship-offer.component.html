@@ -1,23 +1,20 @@
-<div class="navbar">
-  <div class="logo-container">
-    <img src="assets/logosbg.png" alt="Company Logo" />
-  </div>
-  <button class="logout-btn" (click)="logout()">Déconnexion</button>
-</div>
-
-<div class="container">
-  <h2>Ajouter une nouvelle offre de stage</h2>
-
-  <form [formGroup]="addInternshipOfferForm" (ngSubmit)="addInternshipOffer()">
+<h2 class="mb-4">Ajouter une nouvelle offre de stage</h2>
+<form [formGroup]="addInternshipOfferForm" (ngSubmit)="addInternshipOffer()" class="offer-form">
+  <div class="form-group">
     <label>Titre</label>
-    <input formControlName="title" type="text" placeholder="Titre de l'offre" required />
+    <input formControlName="title" type="text" class="form-control" required />
+  </div>
 
+  <div class="form-group">
     <label>Description</label>
-    <textarea formControlName="description" placeholder="Description de l'offre" required></textarea>
+    <textarea formControlName="description" class="form-control" required></textarea>
+  </div>
 
+  <div class="form-group">
     <label>Durée (en mois)</label>
-    <input formControlName="durationInMonths" type="number" placeholder="Durée en mois" required />
+    <input formControlName="durationInMonths" type="number" class="form-control" required />
+  </div>
 
-    <button type="submit" [disabled]="!addInternshipOfferForm.valid">Ajouter l'offre de stage</button>
-  </form>
-</div>
+  <button type="submit" class="btn btn-primary">Ajouter l'offre de stage</button>
+</form>
+<hr />

@@ -1,5 +1,6 @@
 package com.recruitmentapp.configuration;
 
+import com.recruitmentapp.filters.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import com.recruitmentapp.filters.JwtRequestFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -35,6 +34,9 @@ public class WebSecurityConfiguration {
                 .requestMatchers("/api/job-offers/update").hasAuthority("EMPLOYER")
                 .requestMatchers("/api/internship-offers/add").hasAuthority("EMPLOYER")
                 .requestMatchers("/api/job-offers/employer").hasAuthority("EMPLOYER")
+                .requestMatchers("/api/search").hasAuthority("EMPLOYER")
+                .requestMatchers("/api/files/**").permitAll()
+                .requestMatchers("/api/search").hasAuthority("USER")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()

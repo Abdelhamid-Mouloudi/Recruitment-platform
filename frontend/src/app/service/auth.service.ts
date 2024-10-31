@@ -10,7 +10,7 @@ const BASE_URL = 'http://localhost:8080/';
   providedIn: 'root'
 })
 export class AuthService {
-
+private user: any;
   constructor(
     private http: HttpClient,
     private router: Router  // Injection du Router pour la redirection
@@ -54,11 +54,11 @@ export class AuthService {
     this.router.navigate(['/login']);  // Redirection vers la page de login
   }
 
-  hello(): Observable<any> {
-    return this.http.get(BASE_URL + 'api/hello', {
-      headers: this.createAuthorizationHeader()
-    });
-  }
+//   hello(): Observable<any> {
+//     return this.http.get(BASE_URL + 'api/hello', {
+//       headers: this.createAuthorizationHeader()
+//     });
+//   }
 
   private createAuthorizationHeader() {
     const jwtToken = localStorage.getItem('JWT');
@@ -165,5 +165,15 @@ getEmployerApplications(): Observable<any[]> {
     headers: this.createAuthorizationHeader()  // Ajouter le JWT dans l'en-tête
   });
 }
+
+
+ isLoggedIn(): boolean {
+   const token = localStorage.getItem('JWT');
+   return !!token;  //
+ }
+   getUserRole(): string {
+     return localStorage.getItem('ROLE') || '';
+   }
+
 
 }

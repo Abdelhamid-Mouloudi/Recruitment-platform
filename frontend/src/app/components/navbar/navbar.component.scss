@@ -1,0 +1,22 @@
+
+/* navbar.component.scss */
+
+.navbar {
+  background-color: #f8f9fa;
+  padding: 10px;
+
+  .nav-item {
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+

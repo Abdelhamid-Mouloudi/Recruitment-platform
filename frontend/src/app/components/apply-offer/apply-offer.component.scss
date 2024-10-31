@@ -1,103 +1,80 @@
-/* Style global pour la page */
-:host {
-    display: flex;
-    flex-direction: column;
-    height: 145vh;
-    background-color: #121212; /* Fond sombre */
-    color: #fff; /* Couleur du texte */
+/* Titre du formulaire */
+.form-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
 }
 
-/* Style de la navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 94.8%;
-    background-color: #1f1f1f;
-    padding: 1rem 2rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Style pour le logo */
-.logo-container img {
-    width: 120px; /* Taille du logo */
-}
-
-/* Style du bouton de déconnexion */
-.logout-btn {
-    background-color: #d4af37; /* Couleur dorée */
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover {
-    background-color: #b38f2f; /* Couleur légèrement plus foncée au hover */
-}
-
-/* Conteneur global */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    flex-grow: 1; /* Prend tout l'espace restant */
-}
-
-/* Style pour le formulaire */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 400px;
-    padding: 2rem;
+/* Style général du formulaire */
+.apply-form {
+    background-color: #fff6e7; /* Fond beige clair */
     border-radius: 8px;
-    background-color: #1f1f1f;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #ddd;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Style des champs d'entrée */
-input,
-textarea {
-    margin-left: 15px;
-    padding: 0.75rem;
-    border-radius: 4px;
-    border: 1px solid #555;
-    background-color: #2b2b2b;
-    color: #f0f0f0;
+/* Champs du formulaire */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Style des étiquettes (labels) */
+.form-group label {
     font-size: 1rem;
+    font-weight: 500;
+    color: #555;
 }
 
-/* Placeholder des champs d'entrée */
-input::placeholder,
-textarea::placeholder {
-    color: #aaa;
-}
-
-/* Style du bouton */
-button {
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #d4af37; /* Couleur dorée */
-    color: #000;
+/* Champs de saisie et textarea */
+.form-control {
     font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* État désactivé du bouton */
-button:disabled {
-    background-color: #555;
-    cursor: not-allowed;
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* Effet de survol du bouton */
-button:not(:disabled):hover {
-    background-color: #b38f2f; /* Doré plus foncé */
+/* Bouton d'envoi */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    width: 100%; /* Bouton de soumission sur toute la largeur */
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input de fichier */
+.form-control-file {
+    padding: 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-control[readonly] {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+}
+
+/* Espace en bas entre les sections */
+hr {
+    margin-top: 2rem;
+    border-color: #e9ecef;
 }

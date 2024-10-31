@@ -1,6 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary" href="#">MyApp</a>
 
 
-<button type="button" routerLink="/signup">Signup</button>
-<button type="button" routerLink="/login">Login</button>
-<button type="button" (click)="logout()">Logout</button> <!-- Bouton de déconnexion -->
-<router-outlet></router-outlet>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <!-- Barre de recherche -->
+        <li class="nav-item">
+          <form class="d-flex" (ngSubmit)="onSearch()">
+            <input class="form-control me-2" [(ngModel)]="searchKeyword" name="searchKeyword" type="search" placeholder="Search jobs or internships..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </li>
+
+        <!-- Menu "Offer" -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="offerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Offer
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="offerDropdown">
+            <li><a class="dropdown-item" routerLink="/internship-offer">Internship Offer</a></li>
+            <li><a class="dropdown-item" routerLink="/job-offer">Job Offer</a></li>
+          </ul>
+        </li>
+
+        <!-- Menu "Users" -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Users
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" routerLink="/offers">Candidates</a></li>
+            <li><a class="dropdown-item" routerLink="/employer-offers">Employers</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Liens d'authentification -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenu du composant -->
+<div class="containermt-4">
+  <router-outlet></router-outlet>
+</div>

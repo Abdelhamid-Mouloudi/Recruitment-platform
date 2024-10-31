@@ -1,0 +1,41 @@
+/* Styles pour la barre de navigation */
+.navbar {
+    border-bottom: 2px solid #007bff; /* Bordure inférieure colorée */
+    background-color: #fff6e7; /* Couleur de fond sombre */
+}
+
+/* Styles pour le lien "Voir les candidatures" */
+.nav-link.text-secondary {
+    font-weight: bold; /* Texte en gras */
+    margin-right: 1rem; /* Espacement à droite */
+}
+
+/* Styles pour le bouton de déconnexion */
+.btn-outline-danger {
+    color: #dc3545; /* Couleur du texte du bouton */
+    border-color: #dc3545; /* Couleur de la bordure du bouton */
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545; /* Couleur de fond au survol */
+    color: white; /* Couleur du texte au survol */
+}
+
+/* Styles pour les liens d'authentification */
+.nav-link {
+    font-size: 1rem; /* Taille de police */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 1rem; /* Espacement entre les éléments de menu */
+}
+
+/* Styles de la barre de recherche */
+.form-control {
+    border-radius: 0.25rem; /* Coins arrondis pour le champ de recherche */
+}
+
+.btn-outline-success {
+    border-radius: 0.25rem; /* Coins arrondis pour le bouton de recherche */
+}
+

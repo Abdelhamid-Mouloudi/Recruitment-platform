@@ -1,0 +1,15 @@
+<!-- search-results-component.component.html -->
+<div class="search-results-container">
+  <h2 class="search-results-title">Search Results</h2>
+
+  <div *ngIf="searchResults.length > 0" class="offers-list">
+    <div *ngFor="let offer of searchResults" class="offer-card">
+      <h3 class="offer-title">{{ offer.title }}</h3>
+      <p class="offer-description">{{ offer.description }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="searchResults.length === 0" class="no-results">
+    <p>No offers found.</p>
+  </div>
+</div>

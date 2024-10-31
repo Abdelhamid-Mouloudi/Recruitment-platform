@@ -1,10 +1,9 @@
 package com.recruitmentapp.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import com.recruitmentapp.entities.Employer;
 import com.recruitmentapp.entities.Offer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
