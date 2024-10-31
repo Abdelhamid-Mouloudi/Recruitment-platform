@@ -1,70 +1,62 @@
-/* Container pour aligner les colonnes */
 .offers-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-/* Style général pour chaque colonne */
-.job-offers-column, .internship-offers-column {
-    width: 48%; /* Largeur ajustée pour occuper deux colonnes */
-}
-
-/* Style pour les titres des sections */
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 1.2rem;
-    color: #333;
-    border-bottom: 1px solid #ccc; /* Ligne fine sous le titre */
-    padding-bottom: 0.5rem;
-    text-align: center;
-}
-
-/* Style pour les cartes d'offres */
-.offer-card {
-    background-color: #fff6e7; /* Fond beige clair */
-    border: 1px solid #e0e0e0;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Effet au survol pour les offres */
-.offer-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Titre des offres */
-.offer-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-/* Description des offres */
-.offer-description {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-/* Style pour les boutons */
-.btn-success, .btn-info {
-    font-size: 0.9rem;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.25rem;
-    font-weight: bold;
-}
-
-/* Espacement entre les colonnes */
-@media (max-width: 768px) {
+    gap: 20px;
+    padding: 30px 15px;
+    background-color: #111;
+    color: #fff;
+  
     .job-offers-column, .internship-offers-column {
-        width: 100%;
-        margin-bottom: 2rem; /* Espace entre les sections en vue mobile */
+      flex: 1; /* Chaque colonne prend 50% de la largeur */
     }
-}
+  
+    .section-title {
+      color: #d4af37;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  
+    .offer-card {
+      background-color: #333;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 20px;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+      }
+  
+      .offer-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #d4af37;
+        margin-bottom: 0.8rem;
+      }
+  
+      .offer-description {
+        font-size: 1rem;
+        color: #ccc;
+        margin-bottom: 1rem;
+      }
+  
+      .apply-btn {
+        background-color: #d4af37;
+        color: #000;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #b38e30;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  

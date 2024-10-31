@@ -1,21 +1,21 @@
-<div class="row offers-container">
+<div class="offers-container row">
   <!-- Colonne pour les offres d'emploi -->
   <div class="col-md-6 job-offers-column">
-    <h2 class="section-title">Offres d'emploi</h2>
-    <div *ngFor="let offer of jobOffers" class="offer-card p-3 mb-4">
+    <h2 class="section-title">Job Offers</h2>
+    <div *ngFor="let offer of jobOffers" class="offer-card">
       <h3 class="offer-title">{{ offer.title }}</h3>
       <p class="offer-description">{{ offer.description }}</p>
-      <button (click)="applyForJobOffer(offer.id)" class="btn btn-success">Postuler</button>
+      <button (click)="applyForJobOffer(offer.id)" class="btn apply-btn">Apply</button>
     </div>
   </div>
 
   <!-- Colonne pour les offres de stage -->
   <div class="col-md-6 internship-offers-column">
-    <h2 class="section-title">Offres de stage</h2>
-    <div *ngFor="let offer of internshipOffers" class="offer-card p-3 mb-4">
+    <h2 class="section-title">Internship Offers</h2>
+    <div *ngFor="let offer of internshipOffers" class="offer-card">
       <h3 class="offer-title">{{ offer.title }}</h3>
       <p class="offer-description">{{ offer.description }}</p>
-      <button (click)="applyForInternshipOffer(offer.id)" class="btn btn-info">Postuler</button>
+      <button (click)="applyForInternshipOffer(offer.id)" class="btn apply-btn">Apply</button>
     </div>
   </div>
 </div>
