@@ -1,0 +1,68 @@
+// Arrière-plan sombre pour la page entière
+.offer-page {
+    background-color: #111; // Couleur de fond proche du noir
+    width: 100%;
+    height: 100vh; // Hauteur complète de la page
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .offer-form-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #1a1a1a; // Fond sombre pour le formulaire
+    color: #ffffff; // Texte en blanc
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); // Ombre douce
+  
+    h2 {
+      color: #d4af37; // Couleur dorée pour le titre
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 1.5rem;
+  
+      label {
+        color: #d4af37; // Doré pour les labels
+        font-weight: bold;
+      }
+  
+      .form-control {
+        background-color: #333;
+        color: #ffffff;
+        border: 1px solid #555;
+        border-radius: 5px;
+        padding: 10px;
+  
+        &::placeholder {
+          color: #aaa;
+        }
+  
+        &:focus {
+          outline: none;
+          border-color: #d4af37;
+          box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+        }
+      }
+    }
+  
+    .btn-primary {
+      width: 100%;
+      background-color: #d4af37;
+      color: #000;
+      border: none;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #b38f2f;
+        color: #000;
+      }
+    }
+  }
+  

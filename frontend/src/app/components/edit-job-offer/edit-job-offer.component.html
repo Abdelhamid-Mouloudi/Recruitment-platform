@@ -1,20 +1,23 @@
-<h2 class="mb-4">Modifier l'offre d'emploi</h2>
-<form [formGroup]="editForm" (ngSubmit)="saveChanges()" class="offer-form">
-  <div class="form-group">
-    <label>Titre</label>
-    <input formControlName="title" type="text" class="form-control" />
-  </div>
+<div class="offer-page">
+  <div class="offer-form-container">
+    <h2 class="mb-4">Update Job Offer</h2>
+    <form [formGroup]="editForm" (ngSubmit)="saveChanges()" class="offer-form">
+      <div class="form-group">
+        <label>Title</label>
+        <input formControlName="title" type="text" class="form-control" />
+      </div>
 
-  <div class="form-group">
-    <label>Description</label>
-    <textarea formControlName="description" class="form-control"></textarea>
-  </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea formControlName="description" class="form-control"></textarea>
+      </div>
 
-  <div class="form-group">
-    <label>Type de contrat</label>
-    <input formControlName="contractType" type="text" class="form-control" />
-  </div>
+      <div class="form-group">
+        <label>Contract Type</label>
+        <input formControlName="contractType" type="text" class="form-control" />
+      </div>
 
-  <button type="submit" class="btn btn-warning">Enregistrer les modifications</button>
-</form>
-<hr />
+      <button type="submit" class="btn btn-primary">Save Modifications</button>
+    </form>
+  </div>
+</div>
