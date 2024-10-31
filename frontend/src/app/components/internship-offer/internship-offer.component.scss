@@ -1,62 +1,76 @@
-/* Section des offres */
-.offers-section {
-    margin-top: 2rem;
-}
-
-/* Titre de la section */
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 1.2rem;
-    color: #333;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5rem;
-    text-align: center;
-}
-
-/* Style des cartes d'offres */
-.offer-card {
-    background-color: #fff6e7; /* Fond beige clair */
-    border: 1px solid #e0e0e0;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Effet au survol des cartes */
-.offer-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Titre des offres */
-.card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-/* Description des offres */
-.card-text {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-/* Style du bouton Postuler */
-.btn-primary {
-    font-size: 0.9rem;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.25rem;
-    font-weight: bold;
-}
-
-/* Message quand il n'y a pas d'offres */
-.no-offers {
-    font-size: 1rem;
-    color: #999;
-    text-align: center;
-    margin-top: 1rem;
-}
+.offer-page {
+    background-color: #111;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .offers-section {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  
+    .section-title {
+      color: #d4af37;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  
+    .offer-card {
+      background-color: #333;
+      border: 1px solid #444;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+  
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+      }
+  
+      .card-body {
+        padding: 20px;
+  
+        .card-title {
+          color: #d4af37;
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+  
+        .card-text {
+          color: #ccc;
+          margin-bottom: 1rem;
+        }
+  
+        .btn-primary {
+          background-color: #d4af37;
+          color: #000;
+          border: none;
+          font-weight: bold;
+          padding: 10px 15px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #b38f2f;
+          }
+        }
+      }
+    }
+  
+    .no-offers-text {
+      color: #aaa;
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+  }
+  
