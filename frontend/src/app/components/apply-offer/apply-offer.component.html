@@ -1,31 +1,35 @@
-<h1 class="mb-4 form-title">Postuler à une offre</h1>
-<form [formGroup]="applyForm" (ngSubmit)="apply()" class="apply-form p-4 shadow-sm rounded">
-  <div class="form-group">
-    <label for="firstName">Prénom</label>
-    <input id="firstName" formControlName="firstName" type="text" class="form-control" placeholder="Entrez votre prénom" />
-  </div>
+<div class="apply-page">
+  <div class="container">
+    <h1 class="text-center form-title">Apply for a Job</h1>
 
-  <div class="form-group">
-    <label for="lastName">Nom</label>
-    <input id="lastName" formControlName="lastName" type="text" class="form-control" placeholder="Entrez votre nom" />
-  </div>
+    <form [formGroup]="applyForm" (ngSubmit)="apply()" class="apply-form">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" type="text" class="form-control" placeholder="Enter your first name" />
+      </div>
 
-  <div class="form-group">
-    <label for="age">Âge</label>
-    <input id="age" formControlName="age" type="number" class="form-control" placeholder="Entrez votre âge" />
-  </div>
+      <div class="form-group">
+        <label for="lastName">Family Name</label>
+        <input id="lastName" formControlName="lastName" type="text" class="form-control" placeholder="Enter your family name" />
+      </div>
 
-  <div class="form-group">
-    <label for="motivationLetter">Lettre de motivation</label>
-    <textarea id="motivationLetter" formControlName="motivationLetter" class="form-control" rows="4" placeholder="Expliquez vos motivations"></textarea>
-  </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input id="age" formControlName="age" type="number" class="form-control" placeholder="Enter your age" />
+      </div>
 
-  <div class="form-group">
-    <label for="cv">CV (Fichier PDF)</label>
-    <input type="file" id="cv" (change)="onFileSelected($event)" accept="application/pdf" class="form-control-file" />
-    <input type="text" [value]="applyForm.get('fileName')?.value" readonly class="form-control mt-2" placeholder="Fichier sélectionné" />
-  </div>
+      <div class="form-group">
+        <label for="motivationLetter">Motivation Letter</label>
+        <textarea id="motivationLetter" formControlName="motivationLetter" class="form-control" rows="4" placeholder="Describe your motivation"></textarea>
+      </div>
 
-  <button type="submit" class="btn btn-success btn-block">Envoyer la candidature</button>
-</form>
-<hr />
+      <div class="form-group">
+        <label for="cv">CV (PDF file)</label>
+        <input type="file" id="cv" (change)="onFileSelected($event)" accept="application/pdf" class="form-control-file" />
+        <input type="text" [value]="applyForm.get('fileName')?.value" readonly class="form-control mt-2 selected-file" placeholder="Selected file" />
+      </div>
+
+      <button type="submit" class="btn submit-btn">Submit Application</button>
+    </form>
+  </div>
+</div>
