@@ -1,23 +1,65 @@
-.container {
-  margin-top: 20px; /* Ajoute un espace en haut de la page */
+.offer-page {
+  background-color: #111; // Fond sombre proche du noir
+  color: #ffffff; // Couleur de texte blanche
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.text-highlight {
+  color: #d4af37; // Couleur dorée pour le titre principal "Employer Offers"
+  font-weight: bold;
+  text-align: center;
+}
+
+.offer-card {
+  background-color: #1a1a1a; // Fond sombre pour les cartes d'offre
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+
+  .section-title {
+    color: #f2a965; // Couleur chaude et plus visible pour "My Job Offers" et "My Internship Offers"
+    font-weight: bold;
+  }
 }
 
 .card {
-  transition: transform 0.2s; /* Animation douce lors du survol */
-}
+  transition: transform 0.2s;
+  background-color: #262626; // Fond légèrement plus clair pour les cartes
+  border-radius: 5px;
 
-.card:hover {
-  transform: scale(1.05); /* Agrandissement de la carte lors du survol */
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .card-title {
+    color: #d4af37; // Couleur dorée pour les titres de chaque offre
+  }
+  .card-text {
+    color: white;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+  }
 }
 
 .btn-primary {
-  margin-top: 10px; /* Ajoute un espace au-dessus du bouton */
+  margin-top: 10px;
+  background-color: #d4af37;
+  color: #000;
+
+  &:hover {
+    background-color: #b38f2f;
+    color: #fff;
+  }
 }
 
 .mb-5 {
-  margin-bottom: 3rem; /* Ajoute un espacement entre les sections */
+  margin-bottom: 3rem;
 }
 
 .shadow-sm {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Légère ombre autour des cartes */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }

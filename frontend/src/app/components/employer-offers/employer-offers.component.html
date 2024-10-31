@@ -1,48 +1,50 @@
-<div class="container my-4">
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <h1 class="text-primary">Offres de l'employeur</h1>
-    <button (click)="viewApplications()" class="btn btn-secondary">Voir les candidatures reçues</button>
-  </div>
-
-  <div class="row">
-    <!-- Job Offers Section -->
-    <div class="col-md-6">
-      <div class="mb-5" style="background-color: #fff6e7; padding: 20px; border-radius: 5px;">
-        <h2 class="mb-4 text-secondary">Mes offres d'emploi</h2>
-        <div class="row">
-          <div class="col-12" *ngFor="let offer of jobOffers">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">{{ offer.title }}</h5>
-                <p class="card-text">{{ offer.description }}</p>
-                <button (click)="editJobOffer(offer.id)" class="btn btn-info btn-block">Modifier cette offre</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="my-3">
-          <button (click)="addJobOffer()" class="btn btn-primary">Ajouter une nouvelle offre d'emploi</button>
-        </div>
-      </div>
+<div class="offer-page">
+  <div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h1 class="text-highlight">Employer Offers</h1>
+      <button (click)="viewApplications()" class="btn btn-secondary">See the Applications Received</button>
     </div>
 
-    <!-- Internship Offers Section -->
-    <div class="col-md-6">
-      <div class="mb-5" style="background-color: #fff6e7; padding: 20px; border-radius: 5px;">
-        <h2 class="mb-4 text-secondary">Mes offres de stage</h2>
-        <div class="row">
-          <div class="col-12" *ngFor="let offer of internshipOffers">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">{{ offer.title }}</h5>
-                <p class="card-text">{{ offer.description }}</p>
-                <button (click)="editInternshipOffer(offer.id)" class="btn btn-info btn-block">Modifier cette offre</button>
+    <div class="row">
+      <!-- Job Offers Section -->
+      <div class="col-md-6">
+        <div class="mb-5 offer-card">
+          <h2 class="section-title">My Job Offers</h2>
+          <div class="row">
+            <div class="col-12" *ngFor="let offer of jobOffers">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{{ offer.title }}</h5>
+                  <p class="card-text">{{ offer.description }}</p>
+                  <button (click)="editJobOffer(offer.id)" class="btn btn-info btn-block">Update This Offer</button>
+                </div>
               </div>
             </div>
           </div>
+          <div class="my-3">
+            <button (click)="addJobOffer()" class="btn btn-primary">Add New Job Offer</button>
+          </div>
         </div>
-        <div class="my-3">
-          <button (click)="addInternshipOffer()" class="btn btn-primary">Ajouter une nouvelle offre de stage</button>
+      </div>
+
+      <!-- Internship Offers Section -->
+      <div class="col-md-6">
+        <div class="mb-5 offer-card">
+          <h2 class="section-title">My Internship Offers</h2>
+          <div class="row">
+            <div class="col-12" *ngFor="let offer of internshipOffers">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{{ offer.title }}</h5>
+                  <p class="card-text">{{ offer.description }}</p>
+                  <button (click)="editInternshipOffer(offer.id)" class="btn btn-info btn-block">Update This Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="my-3">
+            <button (click)="addInternshipOffer()" class="btn btn-primary">Add New Internship Offer</button>
+          </div>
         </div>
       </div>
     </div>
