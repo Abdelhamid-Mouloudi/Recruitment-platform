@@ -1,30 +1,26 @@
-<h1 class="mb-4 text-center">Liste des candidatures reçues</h1>
+<div class="offer-page">
+  <div class="container applications-section">
+    <h1 class="text-center section-title">List of Applications Received</h1>
 
-<div class="d-flex justify-content-end mb-3">
-  <button class="btn btn-primary">Voir les candidatures</button>
-</div>
+    
 
-<!-- Conteneur principal avec couleur de fond -->
-<div class="p-4 rounded" style="background-color: #fff1da;">
-  <!-- Boucle pour afficher les candidatures -->
-  <div *ngFor="let application of applications" class="application mb-4 p-3 border rounded shadow-sm" style="background-color: white;">
-    <h3 class="text-primary">{{ application.firstName }} {{ application.lastName }}</h3>
-    <p><strong>Âge :</strong> {{ application.age }}</p>
-    <p><strong>Lettre de motivation :</strong></p>
-    <blockquote class="blockquote pl-3" style="border-left: 5px solid #007bff;">
-      {{ application.motivationLetter }}
-    </blockquote>
-    <p><strong>Chemin du CV :</strong>
-      <a [href]="application.cvPath" class="text-info" target="_blank">Voir le CV</a>
-    </p>
-    <p><strong>Offre liée :</strong> {{ application.offer.title }}</p>
-    <p><strong>Rank AI :</strong> <span class="badge bg-success">{{ getAIRankForApplication(application) }}</span></p>
-  </div>
+    <div class="applications-container">
+      <div *ngFor="let application of applications" class="application-card mb-4">
+        <h3 class="applicant-name">{{ application.firstName }} {{ application.lastName }}</h3>
+        <p><strong>Age :</strong> {{ application.age }}</p>
+        <p><strong>Motivation Letter :</strong></p>
+        <blockquote class="motivation-blockquote">
+          {{ application.motivationLetter }}
+        </blockquote>
+        <p><strong>CV Path:</strong></p>
+        <a [href]="application.cvPath" class="cv-link" target="_blank">View CV</a>
+        <p><strong>Related Offer:</strong> {{ application.offer.title }}</p>
+        <p><strong>AI Rank:</strong> <span class="ai-rank">{{ getAIRankForApplication(application) }}</span></p>
+      </div>
 
-  <!-- Message si aucune candidature n'est reçue -->
-  <div *ngIf="applications.length === 0" class="text-center text-muted">
-    <p>Aucune candidature reçue pour le moment.</p>
+      <div *ngIf="applications.length === 0" class="no-applications-text">
+        <p>No applications received yet.</p>
+      </div>
+    </div>
   </div>
 </div>
-
-<hr />
