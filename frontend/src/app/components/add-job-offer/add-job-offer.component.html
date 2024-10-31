@@ -1,20 +1,23 @@
-<h2 class="mb-4">Ajouter une nouvelle offre d'emploi</h2>
-<form [formGroup]="addJobOfferForm" (ngSubmit)="addJobOffer()" class="offer-form">
-  <div class="form-group">
-    <label>Titre</label>
-    <input formControlName="title" type="text" class="form-control" required />
-  </div>
+<div class="offer-page d-flex justify-content-center align-items-center vh-100">
+  <div class="offer-form-container">
+    <h2 class="text-center mb-4">Add New Job Offer</h2>
+    <form [formGroup]="addJobOfferForm" (ngSubmit)="addJobOffer()" class="offer-form">
+      <div class="form-group">
+        <label>Title</label>
+        <input formControlName="title" type="text" class="form-control" required />
+      </div>
 
-  <div class="form-group">
-    <label>Description</label>
-    <textarea formControlName="description" class="form-control" required></textarea>
-  </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea formControlName="description" class="form-control" required></textarea>
+      </div>
 
-  <div class="form-group">
-    <label>Type de contrat</label>
-    <input formControlName="contractType" type="text" class="form-control" required />
-  </div>
+      <div class="form-group">
+        <label>Contract Type</label>
+        <input formControlName="contractType" type="text" class="form-control" required />
+      </div>
 
-  <button type="submit" class="btn btn-primary">Ajouter l'offre d'emploi</button>
-</form>
-<hr />
+      <button type="submit" class="btn btn-primary">Add Job Offer</button>
+    </form>
+  </div>
+</div>
