@@ -1,20 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand text-primary" href="#">Talent Aligner</a>
+    <!-- Logo de l'application -->
+    <a class="navbar-brand" href="#">
+      <img src="assets/logosbg.png" alt="Talent Aligner Logo" class="navbar-logo" />
+      Talent Aligner
+    </a>
 
-
-
-
+    <!-- Bouton de navigation mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <!-- Barre de recherche -->
         <li class="nav-item">
-          <form class="d-flex" (ngSubmit)="onSearch()">
-            <input class="form-control me-2" [(ngModel)]="searchKeyword" name="searchKeyword" type="search" placeholder="Search jobs or internships..." aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <form class="d-flex search-form" (ngSubmit)="onSearch()">
+            <input class="form-control" [(ngModel)]="searchKeyword" name="searchKeyword" type="search" placeholder="Search jobs or internships..." aria-label="Search">
+            <button class="btn btn-search" type="submit">Search</button>
           </form>
         </li>
 
@@ -50,7 +53,7 @@
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+          <button class="btn btn-logout" (click)="logout()">Logout</button>
         </li>
       </ul>
     </div>
@@ -58,6 +61,6 @@
 </nav>
 
 <!-- Contenu du composant -->
-<div class="containermt-4">
+<div >
   <router-outlet></router-outlet>
 </div>
