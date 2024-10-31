@@ -1,3 +1,7 @@
+<div class="logo">
+  <img src="assets/logosbg.png" alt="Talent Aligner Logo" />
+</div>
+
 <form [formGroup]="signupForm" class="form-container">
   <div class="form-group">
     <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" formControlName="name" />
@@ -15,8 +19,7 @@
     <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" formControlName="confirmPassword" />
   </div>
 
-  <!-- Ajout d'une section pour le choix du rôle -->
-  <div class="form-group role-selection">
+  <div class="form-group radio-group">
     <label>
       <input type="radio" formControlName="role" value="USER" /> Utilisateur
     </label>

@@ -1,58 +1,85 @@
-/* Conteneur du formulaire */
-.form-container {
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+    text-align: center;
+  
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+  
+  .form-container {
     max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #333;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles pour chaque groupe de formulaire */
-.form-group {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .form-group {
     margin-bottom: 15px;
-}
-
-/* Style pour les champs d'entrée */
-.form-control {
+  }
+  
+  .form-control {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ced4da;
+    border: 1px solid #555;
     border-radius: 5px;
-    transition: border-color 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-/* Styles pour la sélection des rôles */
-.role-selection {
+    background-color: #222;
+    color: #fff;
+  
+    &::placeholder {
+      color: #aaa;
+    }
+  
+    &:focus {
+      outline: none;
+      border-color: #d4af37;
+    }
+  }
+  
+  .radio-group {
+    display: flex;
+    justify-content: center;
     margin: 15px 0;
-}
-
-.role-selection label {
-    margin-right: 20px;
-    font-size: 14px;
-    color: #495057;
-}
-
-/* Bouton d'inscription */
-.btn {
+  
+    label {
+      margin: 0 10px;
+      font-size: 14px;
+      color: #d4af37;
+    }
+  }
+  
+  .btn {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-}
-
-.btn-primary {
-    background-color: #007bff;
+    background-color: #d4af37;
+    color: #000;
     border: none;
-}
-
-.btn-primary:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-}
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #b38f2f;
+    }
+  
+    &:disabled {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+  }
+  
