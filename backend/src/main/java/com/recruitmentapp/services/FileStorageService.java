@@ -24,19 +24,19 @@ public class FileStorageService {
 
     @Autowired
     public FileStorageService() throws Exception {
-        this.fileStorageLocation = Paths.get("uploads").toAbsolutePath().normalize();
-        Files.createDirectories(this.fileStorageLocation);  // Crée le répertoire s'il n'existe pas
+        // Set the path to the new directory location
+        this.fileStorageLocation = Paths.get("3D/Recruitment-platform/ai-model/data/resumes").toAbsolutePath().normalize();
+
+        // Create the new directory if it doesn’t exist
+        Files.createDirectories(this.fileStorageLocation);
     }
 
     public String storeFile(MultipartFile file) {
-        // On récupère le nom du fichier
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         try {
-            // On vérifie que le nom du fichier est valide
             if(fileName.contains("..")) {
                 throw new FileStorageException("Nom de fichier invalide : " + fileName);
             }
-            // On copie le fichier dans le répertoire de destination (uploads/)
             Path targetLocation = this.fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
             return targetLocation.toString();
@@ -46,7 +46,6 @@ public class FileStorageService {
     }
 
     public byte[] getFileContent(String filePath) throws IOException {
-        // Lire le fichier à partir de son chemin et le retourner sous forme de tableau de bytes
         Path path = Paths.get(filePath);
         return Files.readAllBytes(path);
     }
