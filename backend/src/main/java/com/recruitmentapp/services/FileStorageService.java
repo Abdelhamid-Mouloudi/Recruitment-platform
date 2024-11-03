@@ -25,7 +25,7 @@ public class FileStorageService {
     @Autowired
     public FileStorageService() throws Exception {
         // Set the path to the new directory location
-        this.fileStorageLocation = Paths.get("3D/Recruitment-platform/ai-model/data/resumes").toAbsolutePath().normalize();
+        this.fileStorageLocation = Paths.get("../ai-model/data/resumes").toAbsolutePath().normalize();
 
         // Create the new directory if it doesn’t exist
         Files.createDirectories(this.fileStorageLocation);
