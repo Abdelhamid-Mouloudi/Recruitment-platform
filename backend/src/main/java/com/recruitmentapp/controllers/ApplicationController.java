@@ -94,7 +94,7 @@ public class ApplicationController {
     private String callAIModel(String filePath, String jobDescription) {
         try {
             // Chemin absolu du script Python
-            String scriptPath = "C:/Users/HP/Downloads/Spring_Secuirty-Angular_Authentication-CodeElevate-main/Spring_Secuirty-Angular_Authentication-CodeElevate-main/ai-model/src/resume_ranker.py";
+            String scriptPath = "C:/Users/Abdelhamid/Desktop/3D/Recruitment-platform/ai-model/src/resume_ranker.py";
 
             // Créer le ProcessBuilder pour exécuter le script Python avec le chemin du CV et la description de l'offre
             ProcessBuilder processBuilder = new ProcessBuilder("python", scriptPath, filePath, jobDescription);
