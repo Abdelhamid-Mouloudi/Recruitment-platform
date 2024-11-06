@@ -4,6 +4,7 @@ package com.recruitmentapp.services;
 import com.recruitmentapp.exceptions.FileStorageException;
 import com.recruitmentapp.exceptions.MyFileNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -23,11 +24,8 @@ public class FileStorageService {
     private final Path fileStorageLocation;
 
     @Autowired
-    public FileStorageService() throws Exception {
-        // Set the path to the new directory location
-        this.fileStorageLocation = Paths.get("../ai-model/data/resumes").toAbsolutePath().normalize();
-
-        // Create the new directory if it doesn’t exist
+    public FileStorageService(@Value("${file.upload-dir}") String uploadDir) throws Exception {
+        this.fileStorageLocation = Paths.get(uploadDir).toAbsolutePath().normalize();
         Files.createDirectories(this.fileStorageLocation);
     }
 
