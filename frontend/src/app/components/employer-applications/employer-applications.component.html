@@ -13,7 +13,12 @@
         <p><strong>CV Path:</strong></p>
         <a [href]="application.cvPath" class="cv-link" target="_blank">View CV</a>
         <p><strong>Related Offer:</strong> {{ application.offer.title }}</p>
-        <p><strong>AI Rank:</strong> <span class="ai-rank">{{ getAIRankForApplication(application) }}</span></p>
+        <p><strong>AI Rank:</strong> <span class="ai-rank">{{ application.aiRank }}</span></p>
+        
+        <!-- New "Pass to Interview" button -->
+        <button class="pass-to-interview-button" (click)="onPassToInterview(application)">
+          Pass to Interview
+        </button>
       </div>
 
       <div *ngIf="applications.length === 0" class="no-applications-text">

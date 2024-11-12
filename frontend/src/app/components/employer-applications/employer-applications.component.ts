@@ -18,22 +18,23 @@ export class EmployerApplicationsComponent implements OnInit {
 
   loadEmployerApplications() {
     this.authService.getEmployerApplications().subscribe((data: any[]) => {
-      this.applications = data.map(application => ({
-        ...application,
-        aiRank: this.getAIRankForApplication(application)
-      }));
+      this.applications = data
+        .map(application => ({
+          ...application,
+          aiRank: this.getAIRankForApplication(application)
+        }))
+        .sort((a, b) => b.aiRank - a.aiRank);  // Sorting by AI rank in descending order
+      
       console.log("Candidatures reçues : ", this.applications);
     });
   }
 
-  // Méthode pour récupérer le score AI pour chaque candidature
- getAIRankForApplication(application: any): string {
-   return application.aiRank ? application.aiRank : 'En attente de traitement AI';
- }
+  getAIRankForApplication(application: any): string {
+    return application.aiRank ? application.aiRank : 'En attente de traitement AI';
+  }
 
- viewCV(fileName: string) {
-     const url = `http://localhost:8080/api/files/download/${fileName}`;
-     window.open(url, '_blank');  // Ouvre le fichier PDF dans un nouvel onglet
-   }
-
+  viewCV(fileName: string) {
+    const url = `http://localhost:8080/api/files/download/${fileName}`;
+    window.open(url, '_blank');
+  }
 }

@@ -1,89 +1,104 @@
 .offer-page {
-    background-color: #111;
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #111;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.applications-section {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  .section-title {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
-  
-  .applications-section {
-    max-width: 800px;
-    width: 100%;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  
-    .section-title {
-      color: #d4af37;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-  
-    .applications-container {
-      .application-card {
-        background-color: #333;
-        border: 1px solid #444;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.2s, box-shadow 0.2s;
-  
-        &:hover {
-          transform: scale(1.02);
-          box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
-        }
-  
-        .applicant-name {
-          color: #d4af37;
-          font-size: 1.25rem;
-          font-weight: bold;
-        }
-  
-        .motivation-blockquote {
-          border-left: 5px solid #d4af37;
-          padding-left: 15px;
-          color: #ccc;
-          margin: 10px 0;
-        }
-  
-        .cv-link {
-          display: inline-block;
-          margin-top: 5px;
-          padding: 6px 12px;
-          background-color: #4a90e2; // Couleur bleu claire pour le bouton
-          color: #fff;
-          font-weight: bold;
-          border-radius: 5px;
-          text-align: center;
-          text-decoration: none;
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: #357abf;
-          }
-        }
-  
-        .ai-rank {
-          display: inline-block;
-          padding: 5px 10px;
-          background-color: #d4af37; // Couleur dorée pour le AI Rank
-          color: #000;
-          font-weight: bold;
-          border-radius: 5px;
-        }
+
+  .applications-container {
+    .application-card {
+      background-color: #333;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
       }
-  
-      .no-applications-text {
-        color: #aaa;
+
+      .applicant-name {
+        color: #d4af37;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .motivation-blockquote {
+        border-left: 5px solid #d4af37;
+        padding-left: 15px;
+        color: #ccc;
+        margin: 10px 0;
+      }
+
+      .cv-link {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 6px 12px;
+        background-color: #4a90e2;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
         text-align: center;
-        font-size: 1.1rem;
-        margin-top: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #357abf;
+        }
+      }
+
+      .ai-rank {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #d4af37;
+        color: #000;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+      .pass-to-interview-button {
+        margin-top: 15px;
+        padding: 8px 16px;
+        background-color: #d4af37;
+        color: #1a1a1a;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #b88b30;
+        }
       }
     }
+
+    .no-applications-text {
+      color: #aaa;
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
   }
-  
+}
