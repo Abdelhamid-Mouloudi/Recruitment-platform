@@ -37,4 +37,9 @@ export class EmployerApplicationsComponent implements OnInit {
     const url = `http://localhost:8080/api/files/download/${fileName}`;
     window.open(url, '_blank');
   }
+  onPassToInterview(application: any) {
+    console.log(`Pass to interview for ${application.firstName} ${application.lastName}`);
+    // Email sending logic can be implemented here later
+  }
+  
 }
