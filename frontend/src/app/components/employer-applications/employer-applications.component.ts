@@ -23,11 +23,17 @@ export class EmployerApplicationsComponent implements OnInit {
           ...application,
           aiRank: this.getAIRankForApplication(application)
         }))
-        .sort((a, b) => b.aiRank - a.aiRank);  // Sorting by AI rank in descending order
-      
+        .sort((a, b) => {
+          const rankA = a.aiRank === 'Erreur lors de l’analyse' ? -Infinity : parseFloat(a.aiRank);
+          const rankB = b.aiRank === 'Erreur lors de l’analyse' ? -Infinity : parseFloat(b.aiRank);
+  
+          return rankB - rankA; // Trier par ordre décroissant, erreurs en bas
+        });
       console.log("Candidatures reçues : ", this.applications);
     });
   }
+  
+  
 
   getAIRankForApplication(application: any): string {
     return application.aiRank ? application.aiRank : 'En attente de traitement AI';
