@@ -24,14 +24,27 @@ export class EmployerApplicationsComponent implements OnInit {
           aiRank: this.getAIRankForApplication(application)
         }))
         .sort((a, b) => {
-          const rankA = a.aiRank === 'Erreur lors de l’analyse' ? -Infinity : parseFloat(a.aiRank);
-          const rankB = b.aiRank === 'Erreur lors de l’analyse' ? -Infinity : parseFloat(b.aiRank);
+          // Extraire les scores sous forme de nombre
+          const rankA = parseFloat(a.aiRank);
+          const rankB = parseFloat(b.aiRank);
   
-          return rankB - rankA; // Trier par ordre décroissant, erreurs en bas
+          // Si les deux scores sont des nombres valides, les comparer pour tri décroissant
+          if (!isNaN(rankA) && !isNaN(rankB)) {
+            return rankB - rankA; // Tri en ordre décroissant
+          }
+  
+          // Si l'un des deux n'est pas un nombre, on le considère en bas de la liste
+          if (isNaN(rankA)) return 1;
+          if (isNaN(rankB)) return -1;
+  
+          // En cas d'égalité ou d'incompatibilité, garder l'ordre initial
+          return 0;
         });
-      console.log("Candidatures reçues : ", this.applications);
+  
+      console.log("Candidatures reçues (triées) : ", this.applications);
     });
   }
+  
   
   
 
